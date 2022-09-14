@@ -138,7 +138,7 @@ GROUP BY rating
 HAVING AVG(length) > 120;
 
 
--- Rank films by length (filter out the rows that have nulls or 0s in length column). In your output, only select the columns title, length, and the rank.
+-- 7. Rank films by length (filter out the rows that have nulls or 0s in length column). In your output, only select the columns title, length, and the rank.
 -- Option 1: RANK()
 SELECT RANK() OVER(ORDER BY length DESC) AS 'Rank', title AS 'Title', length AS 'Length' FROM sakila.film
 WHERE length > 0 AND length IS NOT NULL
